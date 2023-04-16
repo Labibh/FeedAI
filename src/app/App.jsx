@@ -6,8 +6,10 @@ import Home from "../pages/Home/index.jsx";
 import Liked from "../pages/Liked/index.jsx";
 import Create from "../pages/PostCreate/index.jsx";
 import MyPosts from "../pages/MyPosts/index.jsx";
+import PostView from "../pages/PostView/index.jsx";
 import { useDispatch } from 'react-redux';
 import {generateOrRetrieveUserID, getPost} from "../redux/mainSlice.jsx";
+
 
 function App() {
     const dispatch = useDispatch();
@@ -24,6 +26,7 @@ function App() {
                     <Route path="/liked" Component={Liked}/>
                     <Route path="/create" Component={Create}/>
                     <Route path="/myposts" Component={MyPosts}/>
+                    <Route path="/post/:id" Component={PostView}/>
                 </Routes>
             </Router>
         </div>

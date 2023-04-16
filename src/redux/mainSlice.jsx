@@ -122,7 +122,7 @@ export const mainSlice = createSlice({
                 state.data = action.payload;
             })
             .addCase(removePost.fulfilled, (state, action) => {
-                // Add any necessary state changes here if needed
+
             });
     },
 });

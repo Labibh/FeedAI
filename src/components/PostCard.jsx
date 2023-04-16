@@ -6,6 +6,7 @@ import likedIcon2 from '../assets/postCard/like-outlined-liked.svg'
 import deleteIcon from '../assets/postCard/delete-forever-outline.svg'
 import { useSelector, useDispatch } from 'react-redux';
 import {likeAPost, removePost} from "../redux/mainSlice.jsx";
+import {useNavigate} from "react-router-dom";
 
 const Card = styled.div`
   display: grid;
@@ -22,6 +23,7 @@ const Card = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    cursor: pointer;
   }
 
   .info-bottom {
@@ -62,7 +64,12 @@ const PostCard = (props) => {
     const likedPosts = useSelector((state) => state.main.likedPosts.liked);
     const localUserID = localStorage.getItem('userID');
     const deleteIconVisible = props.deleteIcon || false;
+    const navigate = useNavigate();
 
+    const handleImageClick = () => {
+        const postLink = '/post/' + props.PostID;
+        navigate(postLink);
+    }
     const isPostLiked = () => {
         return likedPosts.some(post => post.id === props.PostID);
     };
@@ -79,7 +86,7 @@ const PostCard = (props) => {
     };
     return (
         <Card link={props.link}>
-            <div className="image-top"></div>
+            <div className="image-top" onClick={handleImageClick}></div>
             <div className="info-bottom">
                 <div className="post-title">
                     <h2>{props.title}</h2>
