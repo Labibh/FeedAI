@@ -1,5 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
+import {Container, HeaderBoxTwo} from "../../styles/MainStyles.jsx";
 
 const something = styled.div`
 
@@ -7,9 +8,11 @@ const something = styled.div`
 
 const PostView = () => {
     return (
-        <div>
-            <h1>PostView</h1>
-        </div>
+        <Container>
+            <HeaderBoxTwo>
+                <h1>Create Post</h1>
+            </HeaderBoxTwo>
+        </Container>
     );
 }
 

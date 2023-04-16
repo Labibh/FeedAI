@@ -9,7 +9,7 @@ const Nav = styled.div`
   justify-content: space-between;
   margin: 0 auto;
   width: 100%;
-  max-width: 1920px;
+  //max-width: 1920px;
   height: 70px;
   background-color: var(--color-blue-1);
 }
