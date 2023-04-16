@@ -1,5 +1,4 @@
 import { createSlice,  createAsyncThunk } from '@reduxjs/toolkit';
-import {data} from "../pages/DummyData.jsx";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, setDoc, doc, query, orderBy, limit, deleteDoc, where } from 'firebase/firestore/lite';
 
