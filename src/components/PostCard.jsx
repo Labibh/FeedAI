@@ -83,6 +83,7 @@ const PostCard = (props) => {
     .catch((error) => {
             console.error('Error while deleting the post:', error);
         });
+        setTimeout(() => {  navigate(0) }, 500);
     };
     return (
         <Card link={props.link}>

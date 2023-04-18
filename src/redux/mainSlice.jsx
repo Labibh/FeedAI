@@ -56,19 +56,28 @@ export const removePost = createAsyncThunk('main/removePost', async (postID) => 
             const docRef = doc(db, "database", deletedDocId)
             await deleteDoc(docRef)
                 .then(() => {
-                    window.location.reload();
+                    //window.location.reload();
                 });
             break;
         }
     }
 });
 
+const getLikedPostsFromLocalStorage = () => {
+    const likedPostsJson = localStorage.getItem("likedPosts");
+    if (likedPostsJson) {
+        return JSON.parse(likedPostsJson);
+    } else {
+        return { liked: [] };
+    }
+};
+
 export const mainSlice = createSlice({
     name: 'main',
     initialState: {
         data: [],
         userID: '',
-        likedPosts: {liked: []}
+        likedPosts: getLikedPostsFromLocalStorage(),
     },
     reducers: {
         generateOrRetrieveUserID: (state) => {
