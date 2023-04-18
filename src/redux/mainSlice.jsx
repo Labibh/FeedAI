@@ -56,7 +56,7 @@ export const removePost = createAsyncThunk('main/removePost', async (postID) => 
             const docRef = doc(db, "database", deletedDocId)
             await deleteDoc(docRef)
                 .then(() => {
-                    //window.location.reload();
+                    window.location.reload();
                 });
             break;
         }
